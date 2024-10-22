@@ -3,20 +3,23 @@ import './css/login.css';
 import { postlogins } from '../api/login.api'; // Importa la función para hacer la solicitud
 import { Form,Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; 
+import { useAuth } from './AuthContext';
 
 const Login = () => {
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const {login} = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('')
         try {
-            const response = await postlogins( usuario, password,navigate );
+            const response = await postlogins( usuario, password,);
             if (response.status===200 ) {
                 localStorage.setItem('token', response.data.token);
+                login();
                 navigate("/");
             }else {setError('login fallido')};
         } catch (err) {
