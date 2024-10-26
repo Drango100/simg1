@@ -9,7 +9,7 @@ export const postlogins = async (usuario, password) => {
             withCredentials:true,
         });
         return response;
-        //navigate("/")
+
     } catch (error) {
         console.error('Error en el login:', error.response ? error.response.data : error.message);
         throw error;

@@ -1,0 +1,35 @@
+.general{
+    display: flex;
+}
+.general-1{
+
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: #e1e2e6;
+}
+.general-2{
+    background-image: url("../imagenes/EDIFICIO.jpg");
+    background-position:center center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+.general-3{
+    background-image: url("../imagenes/contactanos.jpg");
+    background-position:center center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+.general {
+    flex-direction: column;
+}
+.general-1 {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+.general-2, .general-3{
+    display: none;
+}
+
