@@ -7,7 +7,7 @@ import loginRoutes from './routes/login/rout.login.js';
 import register  from './routes/registro/router.register.js';
 import cookieParser from 'cookie-parser';
 import category from './routes/categoria/categori.route.js';
-
+import marca from './routes/marca/marca.route.js';
 const app = express();
 
 app.use(cookieParser());
@@ -22,6 +22,7 @@ app.use(taskRoutes);
 app.use(loginRoutes);
 app.use(register);
 app.use(category);
+app.use(marca);
 // Middleware para manejar errores
 app.use((err, req, res, next) => {
     console.error(err.stack);
