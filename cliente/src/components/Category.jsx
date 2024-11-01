@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {CategoryContext}  from '../contex/Category.contex.jsx';
+import {CategoryContex}  from '../contex/Category.contex.jsx';
 import {Button,Table} from'react-bootstrap';
 
 const Category = ({ categoria }) => {
-    const { deleteCategory } = useContext(CategoryContext);
+    const { deleteCategory } = useContext(CategoryContex);
     const navigate = useNavigate();
 
     const handleDelete = () => {
@@ -12,7 +12,7 @@ const Category = ({ categoria }) => {
     };
 
     const handleEdit = () => {
-        navigate(`/edit/${categoria.id}`);
+        navigate(`/editcategory/${categoria.id}`);
     };
 
     return (

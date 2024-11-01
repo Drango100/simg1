@@ -36,7 +36,7 @@ function CreateCategory() {
                     console.log(values);
                     if (params.id) {
                         await updateCategory(params.id, values);
-                        navigate("/Categorias");
+                        navigate("/new/Category");
                     } else {
                         await createCategory(values);
                     }

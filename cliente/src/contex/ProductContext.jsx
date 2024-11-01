@@ -55,6 +55,7 @@ export const ProductContexProvider = ({ children }) => {
             console.error(error);
         }
     };
+    
 
     return (
         <ProductContext.Provider value={{ producto, loadProductos, deleteProducto, createProducto, getProduct, updateProduct }}>

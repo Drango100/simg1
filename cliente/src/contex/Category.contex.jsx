@@ -57,7 +57,7 @@ export const CategoryContexProvider = ({ children }) => {
     };
 
     return (
-        <CategoryContex.Provider value={{loadCategory,deleteCategory,createCategory,getCategory,updateCategory }}>
+        <CategoryContex.Provider value={{categoria,loadCategory,deleteCategory,createCategory,getCategory,updateCategory }}>
             {children}
         </CategoryContex.Provider>
     );

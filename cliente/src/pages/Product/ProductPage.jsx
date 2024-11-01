@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import ProductCart from '../../components/ProductCart.jsx';
 import {useProducto} from '../../contex/ProductContext.jsx';
 import '../css/Product.page.css';
-
+import 'react-bootstrap';
 function ProductPage() {
 const {producto,loadProductos} = useProducto()
     
@@ -23,6 +23,9 @@ return (
         <h1 className='titulo text-center'>
             Tabla de productos
         </h1>
+        <div>
+        <button className='Crear'>Crear un Producto</button>
+        </div>
     {renderMain()}
     </div>
 )

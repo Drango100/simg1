@@ -46,7 +46,7 @@ function CreateProduct() {
                     console.log(values);
                     if (params.id) {
                         await updateProduct(params.id, values);
-                        navigate("/Productos");
+                        navigate("/");
                     } else {
                         await createProducto(values);
                     }

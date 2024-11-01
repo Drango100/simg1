@@ -20,7 +20,7 @@ const Login = () => {
             if (response.status===200 ) {
                 localStorage.setItem('token', response.data.token);
                 login();
-                navigate("/");
+                navigate("/Menu");
             }else {setError('login fallido')};
         } catch (err) {
             setError('Usuario o contraseña incorrecta ');

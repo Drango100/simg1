@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import ProductCart from '../../components/Category.jsx';
 import {useCategory} from '../../contex/Category.contex.jsx';
+import Category from '../../components/Category.jsx';
 
 
 function CategoryPage() {
@@ -15,7 +15,7 @@ const {categoria,loadCategory} = useCategory()
         if(categoria.length === 0) return <h1>No hay categorias ingresados aun</h1>
         
         return categoria.map((categoria) => (
-            <ProductCart categoria={categoria} key={categoria.id} />
+            <Category categoria={categoria} key={categoria.id} />
         ))
 }
 return (

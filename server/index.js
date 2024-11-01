@@ -8,6 +8,14 @@ import register  from './routes/registro/router.register.js';
 import cookieParser from 'cookie-parser';
 import category from './routes/categoria/categori.route.js';
 import marca from './routes/marca/marca.route.js';
+import entradas from './routes/entradas/entradas.route.js';
+import proveedor from './routes/proveedor/proveedor.route.js';
+import cliente from './routes/cliente/cliente.route.js';
+import presentacion from './routes/presentacion/presentacion.route.js';
+import salida from './routes/salida/salida.route.js';
+import Tpenter from './routes/tpenter/tpenter.router.js';
+import Tsalida from './routes/tsalida/tsalida.routes.js';
+import medidas from './routes/medidas/medidas.route.js';
 const app = express();
 
 app.use(cookieParser());
@@ -23,6 +31,14 @@ app.use(loginRoutes);
 app.use(register);
 app.use(category);
 app.use(marca);
+app.use(entradas);
+app.use(proveedor);
+app.use(cliente);
+app.use(presentacion);
+app.use(salida);
+app.use(Tpenter);
+app.use(Tsalida);
+app.use(medidas);
 // Middleware para manejar errores
 app.use((err, req, res, next) => {
     console.error(err.stack);
