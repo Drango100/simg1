@@ -8,7 +8,7 @@ export const getMarcas = async(req, res)=>{
         const [result] = await pool.query("SELECT * FROM marca")
         res.json(result);
     }catch (error){
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -21,7 +21,7 @@ export const getMarca = async (req, res)=>{
         }
         res.json(result[0]);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -39,7 +39,7 @@ res.json({
         nombre_marca
 });
 } catch (error) {
-    return res.status(500).json ({msg: error.massage});
+    return res.status(500).json ({msg: error.message});
 }
 };
 
@@ -62,7 +62,7 @@ export const deleteMarca =async(req, res)=>{
         return res.status(404).json ({msg:"id no encontrado o ya elimanado"})
     res.json(result)
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 

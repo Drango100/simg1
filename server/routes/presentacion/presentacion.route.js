@@ -7,10 +7,10 @@ router.get('/Presentaciones',getPresentaciones);
 
 router.get('/Presentacion/:id',getPresentacion);
 
-router.post('/Marca',createPresentacion);
+router.post('/Presentacion',createPresentacion);
 
-router.put('/Marca/:id',updatePresentacion);
+router.put('/Presentacion/:id',updatePresentacion);
 
-router.delete('/Marca/:id',deletePresentacion);
+router.delete('/Presentacion/:id',deletePresentacion);
 
 export default router;

@@ -8,7 +8,7 @@ export const getTasks = async(req, res)=>{
         const [result] = await pool.query("SELECT * FROM producto ORDER BY createdAt ASC")
         res.json(result);
     }catch (error){
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -21,7 +21,7 @@ export const getTask = async (req, res)=>{
         }
         res.json(result[0]);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -49,7 +49,7 @@ res.json({
         ubi_producto,
 });
 } catch (error) {
-    return res.status(500).json ({msg: error.massage});
+    return res.status(500).json ({msg: error.message});
 }
 };
 
@@ -60,7 +60,7 @@ export const updateTasks = async(req, res)=>{
             ]);
         res.json(result);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 
 };
@@ -72,7 +72,7 @@ export const deleteTasks =async(req, res)=>{
         return res.status(404).json ({msg:"id no encontrado o ya elimanado"})
     res.json(result)
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 

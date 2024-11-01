@@ -8,7 +8,7 @@ export const getClientes = async(req, res)=>{
         const [result] = await pool.query("SELECT * FROM cliente")
         res.json(result);
     }catch (error){
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -21,7 +21,7 @@ export const getCliente = async (req, res)=>{
         }
         res.json(result[0]);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -43,7 +43,7 @@ res.json({
     tel_cliente
 });
 } catch (error) {
-    return res.status(500).json ({msg: error.massage});
+    return res.status(500).json ({msg: error.message});
 }
 };
 
@@ -54,7 +54,7 @@ export const updateCliente = async(req, res)=>{
             ]);
         res.json(result);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 
 };
@@ -66,7 +66,7 @@ export const deleteCliente =async(req, res)=>{
         return res.status(404).json ({msg:"id no encontrado o ya elimanado"})
     res.json(result)
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 

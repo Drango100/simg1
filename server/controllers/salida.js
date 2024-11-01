@@ -8,7 +8,7 @@ export const getSalidas = async(req, res)=>{
         const [result] = await pool.query("SELECT * FROM salida")
         res.json(result);
     }catch (error){
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -21,7 +21,7 @@ export const getSalida = async (req, res)=>{
         }
         res.json(result[0]);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -42,7 +42,7 @@ res.json({
     empre_trasporte
 });
 } catch (error) {
-    return res.status(500).json ({msg: error.massage});
+    return res.status(500).json ({msg: error.message});
 }
 };
 
@@ -53,7 +53,7 @@ export const updateSalida = async(req, res)=>{
             ]);
         res.json(result);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 
 };
@@ -65,7 +65,7 @@ export const deleteSalida =async(req, res)=>{
         return res.status(404).json ({msg:"id no encontrado o ya elimanado"})
     res.json(result)
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 

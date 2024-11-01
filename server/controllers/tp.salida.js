@@ -8,7 +8,7 @@ export const getTsalidas = async(req, res)=>{
         const [result] = await pool.query("SELECT * FROM tipo_salida")
         res.json(result);
     }catch (error){
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -21,7 +21,7 @@ export const getTsalida = async (req, res)=>{
         }
         res.json(result[0]);
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 
@@ -30,7 +30,7 @@ try {
     const {cod_tipo_salida, 
         descr_tipo_salida} = req.body;
 const [result] = await pool.query(
-    "INSERT INTO tipo_salida(cod_tipo_salida,descri_tipo_salida) VALUES (?,?)",
+    "INSERT INTO tipo_salida(cod_tipo_salida,descr_tipo_salida) VALUES (?,?)",
     [cod_tipo_salida,descr_tipo_salida]
 );
 res.json({
@@ -39,7 +39,7 @@ res.json({
     descr_tipo_salida
 });
 } catch (error) {
-    return res.status(500).json ({msg: error.massage});
+    return res.status(500).json ({msg: error.message});
 }
 };
 
@@ -62,7 +62,7 @@ export const deleteTsalida =async(req, res)=>{
         return res.status(404).json ({msg:"id no encontrado o ya elimanado"})
     res.json(result)
     } catch (error) {
-        return res.status(500).json ({msg: error.massage});
+        return res.status(500).json ({msg: error.message});
     }
 };
 

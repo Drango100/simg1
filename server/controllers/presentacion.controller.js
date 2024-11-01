@@ -39,7 +39,7 @@ res.json({
         nombre_presentacion
 });
 } catch (error) {
-    return res.status(500).json ({msg: error.massage});
+    return res.status(500).json ({msg: error.message});
 }
 };
 
