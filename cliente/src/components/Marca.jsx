@@ -1,32 +1,32 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {CategoryContex}  from '../contex/Category.contex.jsx';
+import {CategoryMarca}  from '../contex/Marca.jsx';
 import {Button,Table} from'react-bootstrap';
 
-const Category = ({ categoria }) => {
-    const { deleteCategory } = useContext(CategoryContex);
+const Marca = ({ marca }) => {
+    const { deleteMarca } = useContext(CategoryMarca);
     const navigate = useNavigate();
 
     const handleDelete = () => {
-        deleteCategory(categoria.id);
+        deleteMarca(marca.id);
     };
 
     const handleEdit = () => {
-        navigate(`/edit/category/${categoria.id}`);
+        navigate(`/edit/marca/${marca.id}`);
     };
-
     return (
+        
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th>Codigo de categoria</th>
-                    <th>Nombre de categoria</th>
+                    <th>Codigo de Marca</th>
+                    <th>Nombre de la Marca</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{categoria.cod_categoria}</td>
-                    <td>{categoria.nombre_categoria}</td>
+                    <td>{marca.cod_marca}</td>
+                    <td>{marca.nombre_marca}</td>
                     <td>
                         <Button variant="danger" onClick={handleDelete} className="me-2">
                             Borrar
@@ -34,10 +34,13 @@ const Category = ({ categoria }) => {
                         <Button variant="primary" onClick={handleEdit}>
                             Editar
                         </Button>
+                        
                     </td>
                 </tr>
             </tbody>
+
         </Table>
+        
     );
 };
-export default Category;
+export default Marca;

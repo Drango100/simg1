@@ -12,18 +12,41 @@ const Menu = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
+                <Nav.Link as={Link} to="/home">
+                                Home
+                            </Nav.Link>
                             <Nav.Link as={Link} to="/">
                         Producto
                     </Nav.Link>
                     <Nav.Link as={Link} to="/Categorys">
                         Categorias
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/Categorys">
+                    <Nav.Link as={Link} to="/Marca">
                         Marcas
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/home">
-                                Logout
-                            </Nav.Link>
+                            <Nav.Link as={Link} to="/Clientes">
+                        Clientes
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Entradas">
+                        Entradas
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Proveedores">
+                        Proveedores
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Salidas">
+                        Salidas
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Tpenters">
+                        Tipo Entradas
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Tsalidas">
+                        Tipo De Salidas
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/Umedidas">
+                        Unidad de Medida
+                        </Nav.Link>
+                        
+                        
                 </Nav>
 
             </Navbar.Collapse>

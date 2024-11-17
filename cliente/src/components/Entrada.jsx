@@ -1,32 +1,39 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {CategoryContex}  from '../contex/Category.contex.jsx';
+import { CategoryEntrada } from '../contex/Entradas.jsx';
 import {Button,Table} from'react-bootstrap';
 
-const Category = ({ categoria }) => {
-    const { deleteCategory } = useContext(CategoryContex);
+const Entrada = ({ entrada }) => {
+    const { deleteEntrada } = useContext(CategoryEntrada);
     const navigate = useNavigate();
 
     const handleDelete = () => {
-        deleteCategory(categoria.id);
+        deleteEntrada(entrada.id);
     };
 
     const handleEdit = () => {
-        navigate(`/edit/category/${categoria.id}`);
+        navigate(`/edit/Entrada/${entrada.id}`);
     };
 
     return (
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th>Codigo de categoria</th>
-                    <th>Nombre de categoria</th>
+                    <th>Codigo de Entrada</th>
+                    <th>Fecha de Entrada</th>
+                    <th>Orden Compra</th>
+                    <th>Hora de Entrada</th>
+                    <th>Factura</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{categoria.cod_categoria}</td>
-                    <td>{categoria.nombre_categoria}</td>
+                    <td>{entrada.cod_entrada}</td>
+                    <td>{entrada.fech_entrada}</td>
+                    <td>{entrada.orden_compra}</td>
+                    <td>{entrada.hora_entrada}</td>
+                    <td>{entrada.factura}</td>
                     <td>
                         <Button variant="danger" onClick={handleDelete} className="me-2">
                             Borrar
@@ -40,4 +47,4 @@ const Category = ({ categoria }) => {
         </Table>
     );
 };
-export default Category;
+export default Entrada;

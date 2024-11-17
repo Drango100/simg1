@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const getTpentersRequest = async () => 
+export const getTpEntradasRequest = async () => 
     await axios.get('http://localhost:4000/Tpenters');
 
 

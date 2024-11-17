@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import ProductCart from '../../components/ProductCart.jsx';
 import {useProducto} from '../../contex/ProductContext.jsx';
-import '../css/Product.page.css';
+
 import 'react-bootstrap';
 function ProductPage() {
 const {producto,loadProductos} = useProducto()

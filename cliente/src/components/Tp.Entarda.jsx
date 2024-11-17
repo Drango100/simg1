@@ -1,32 +1,32 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {CategoryContex}  from '../contex/Category.contex.jsx';
+import {CategoryTpEntrada}  from '../contex/tp.entrada.jsx';
 import {Button,Table} from'react-bootstrap';
 
-const Category = ({ categoria }) => {
-    const { deleteCategory } = useContext(CategoryContex);
+const TpEntrada = ({ tipo_entrada }) => {
+    const { deleteTpEntrada } = useContext(CategoryTpEntrada);
     const navigate = useNavigate();
 
     const handleDelete = () => {
-        deleteCategory(categoria.id);
+        deleteTpEntrada(tipo_entrada.id);
     };
 
     const handleEdit = () => {
-        navigate(`/edit/category/${categoria.id}`);
+        navigate(`/edit/Tpenter/${tipo_entrada.id}`);
     };
-
     return (
+        
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th>Codigo de categoria</th>
-                    <th>Nombre de categoria</th>
+                    <th>COD Tipo de Entarda</th>
+                    <th>Descricion de Tipo de Entrada</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{categoria.cod_categoria}</td>
-                    <td>{categoria.nombre_categoria}</td>
+                    <td>{tipo_entrada.cod_tipo_entrada}</td>
+                    <td>{tipo_entrada.descri_tipo_entrada}</td>
                     <td>
                         <Button variant="danger" onClick={handleDelete} className="me-2">
                             Borrar
@@ -34,10 +34,13 @@ const Category = ({ categoria }) => {
                         <Button variant="primary" onClick={handleEdit}>
                             Editar
                         </Button>
+                        
                     </td>
                 </tr>
             </tbody>
+
         </Table>
+        
     );
 };
-export default Category;
+export default TpEntrada;
