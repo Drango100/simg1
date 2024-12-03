@@ -89,7 +89,11 @@ function App() {
                         
                         {/* Rutas protegidas */}
                         
-                          
+                        <Route path="/" element={<ProductPage />} />
+                        
+                        <Route path="/new"element={<CreateProduct/>}/>
+  
+                        {/* <Route path="/edit/:id"element={<CreateProduct/>}/>
                         <Route
                           path="/"
                           element={<ProtectedRoute element={<ProductPage />} />}
@@ -103,7 +107,7 @@ function App() {
                         <Route
                           path="/edit/:id"
                           element={<ProtectedRoute element={<CreateProduct />} />}
-                        />
+                        /> */}
                         <Route path="*" element={<NotFound />} />
       {/* Rutas de categoria */}
                       <Route path="/Categorys" element={<CategoryPage />} />
