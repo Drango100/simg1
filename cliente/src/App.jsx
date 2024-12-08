@@ -1,4 +1,4 @@
-import { Routes, Route,} from "react-router-dom";
+import { Routes, Route, Navigate,} from "react-router-dom";
 import ProductPage from "./pages/Product/ProductPage.jsx";
 import CreateProduct from "./pages/Product/CreateProduct.jsx";
 import NotFound from "./pages/NotFound.jsx";
@@ -71,6 +71,12 @@ function App() {
                     <Routes>
                         {/* Ruta para la página principal (Home) */}
                         <Route
+                        path="/"element={
+                          <Navigate to="/home"replace/>
+                        }/>
+
+                        
+                        <Route
                           path="/home"
                           element={
                             <>
@@ -89,11 +95,14 @@ function App() {
                         
                         {/* Rutas protegidas */}
                         
-                        <Route path="/" element={<ProductPage />} />
+                        <Route path="/Products" element={<ProductPage />} />
                         
                         <Route path="/new"element={<CreateProduct/>}/>
-  
-                        {/* <Route path="/edit/:id"element={<CreateProduct/>}/>
+                        <Route
+                          path="/edit/:id"
+                          element={<ProtectedRoute element={<CreateProduct />} />}
+                        /> 
+                        <Route path="/edit/:id"element={<CreateProduct/>}/>
                         <Route
                           path="/"
                           element={<ProtectedRoute element={<ProductPage />} />}
@@ -107,7 +116,7 @@ function App() {
                         <Route
                           path="/edit/:id"
                           element={<ProtectedRoute element={<CreateProduct />} />}
-                        /> */}
+                        />
                         <Route path="*" element={<NotFound />} />
       {/* Rutas de categoria */}
                       <Route path="/Categorys" element={<CategoryPage />} />

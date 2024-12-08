@@ -3,9 +3,10 @@ import ProductCart from '../../components/ProductCart.jsx';
 import {useProducto} from '../../contex/ProductContext.jsx';
 
 import 'react-bootstrap';
+import {useNavigate} from 'react-router-dom'
 function ProductPage() {
 const {producto,loadProductos} = useProducto()
-    
+const navigate = useNavigate();
 
     useEffect(()=> {
         loadProductos()
@@ -17,14 +18,18 @@ const {producto,loadProductos} = useProducto()
         return producto.map((producto) => (
             <ProductCart producto={producto} key={producto.id} />
         ))
-}
+    };
+    const handleProductCreate = () =>{
+        navigate("/new")
+    }
+
 return (
     <div className='container'>
         <h1 className='titulo text-center'>
             Tabla de productos
         </h1>
         <div>
-        <button className='Crear'>Crear un Producto</button>
+        <button onClick ={handleProductCreate} className='Crear'>Crear un Producto</button>
         </div>
     {renderMain()}
     </div>

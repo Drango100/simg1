@@ -15,7 +15,7 @@ const Menu = () => {
                 <Nav.Link as={Link} to="/home">
                                 Home
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/">
+                            <Nav.Link as={Link} to="/Products">
                         Producto
                     </Nav.Link>
                     <Nav.Link as={Link} to="/Categorys">

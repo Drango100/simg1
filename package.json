@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server/index.js",
-    "test": "mocha --timeout 10000 'test/**/*.js'"
+    "test": "mocha --timeout 10000 'test/**/*.js'",
+    "sonar": "sonar-scanner"
   },
   "keywords": [],
   "author": "",
@@ -25,9 +26,10 @@
     "session": "^0.1.0"
   },
   "devDependencies": {
-    "chai": "^5.1.2",
-    "chai-http": "^5.1.1",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.4",
     "mocha": "^10.8.2",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "sonarqube-scanner": "^4.2.6"
   }
 }

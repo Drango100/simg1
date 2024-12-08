@@ -1,11 +1,11 @@
-import * as chai from 'chai';
+import chai,{expect} from 'chai';
 import chaiHttp from 'chai-http';
 import { describe, it, beforeEach } from 'mocha';
-import app from '../server/routes/crud/index.routes.js'; // Asegúrate de importar tu aplicación Express
+import app from '../server/index.js'; // Asegúrate de importar tu aplicación Express
 import { pool } from '../server/db/db.js'; // Ajuste de la ruta
 
 chai.use(chaiHttp);
-const { expect } = chai;
+
 
 describe('productos', () => {
   beforeEach(async () => {
@@ -72,7 +72,7 @@ describe('productos', () => {
 
   it('should delete an existing task', (done) => {
     chai.request(app)
-      .delete('/Producto/2')
+      .delete('/Producto/1')
       .end((err, res) => {
         expect(res).to.have.status(200);
         expect(res.body.affectedRows).to.equal(1);
